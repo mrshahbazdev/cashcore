@@ -1,66 +1,250 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# CashCore – Profit First Financial Intelligence
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> **"Das Tool zwingt dich, dein Geld bewusst zu sehen, zu bewerten und aktiv umzulenken."**
+>
+> The tool forces you to consciously see, evaluate, and redirect your money.
 
-## About Laravel
+CashCore is a Profit First financial intelligence SaaS built with Laravel 10. It helps entrepreneurs see where their money really goes, detect cash leaks, score every expense, unlock hidden capital, and permanently change financial behavior.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Full **English/German (EN/DE)** support built in from day one.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Features
 
-## Learning Laravel
+### 1. Cash Transparency Engine
+- Import bank & accounting data (CSV)
+- Auto-categorize income & expenses
+- Dashboard with KPIs: Cost %, Profit %, Overhead %
+- Chart.js visualizations (monthly trend, expense breakdown)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 2. Cash Leak Detection
+- Algorithmic detection of rising costs, unused subscriptions, dead expenses
+- Leak Score (0–100)
+- Actionable list: resolve or ignore each leak
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 3. Expense Value Scoring
+- 4-dimension scoring per expense: Revenue, Efficiency, Strategic, Usage (0–10 each)
+- Total score out of 40
+- Auto-recommendation: Keep / Reduce / Eliminate
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 4. Hidden Cash Unlocker
+- Track liquidity blockers: open invoices, payment terms, inventory, inefficient flows
+- Calculate total unlockable capital
+- Action items per blocker
 
-## Laravel Sponsors
+### 5. Behavioral System (Game Changer)
+- Monthly/quarterly/annual cost review sessions with checklists
+- Alerts: "Costs rising faster than revenue", "You're becoming cost-blind"
+- Streak tracking for building discipline
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 6. Scenario Simulator
+- What-if analysis: adjust revenue/costs and see projected profit change
+- Before vs. After comparison with delta
 
-### Premium Partners
+### 7. Profit Allocation Layer
+- Profit First bucket distribution: Profit, Taxes, Salary, Operations
+- Percentage-based allocation with doughnut chart visualization
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+---
 
-## Contributing
+## Tech Stack
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+| Technology | Usage |
+|---|---|
+| **Laravel 10** | PHP framework |
+| **Tailwind CSS 3** | Styling (dark theme) |
+| **Vite** | Frontend bundler |
+| **Chart.js 4** | Dashboard visualizations |
+| **Alpine.js** | Lightweight interactivity |
+| **SQLite / MySQL** | Database |
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Installation
 
-## Security Vulnerabilities
+### Requirements
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- PHP 8.1+
+- Composer
+- Node.js 18+
+- MySQL 5.7+ / MariaDB 10.3+ / SQLite
+
+### Local Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/mrshahbazdev/cashcore.git
+cd cashcore
+
+# Install PHP dependencies
+composer install
+
+# Install frontend dependencies & build
+npm install
+npm run build
+
+# Copy environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Configure database in .env (see Database section below)
+
+# Run migrations
+php artisan migrate
+
+# Start development server
+php artisan serve
+```
+
+Visit `http://localhost:8000` to access CashCore.
+
+### Database Configuration
+
+**MySQL/MariaDB** (recommended for production):
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=cashcore
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+**SQLite** (quick local setup):
+```env
+DB_CONNECTION=sqlite
+DB_DATABASE=/absolute/path/to/database.sqlite
+```
+
+---
+
+## Shared Hosting Deployment
+
+CashCore includes `.htaccess` files configured for shared hosting (cPanel, Plesk, etc.):
+
+### Option A: Document Root Points to Project Root
+
+1. Upload the entire project to your hosting (e.g., `/home/username/cashcore/`)
+2. The root `.htaccess` will automatically redirect requests to `public/`
+3. Set your domain's document root to the project folder
+
+### Option B: Document Root Points to `public/` (Recommended)
+
+1. Upload the project to a directory outside `public_html` (e.g., `/home/username/cashcore/`)
+2. Point your domain's document root to `/home/username/cashcore/public/`
+3. Or create a symlink: `ln -s /home/username/cashcore/public /home/username/public_html`
+
+### Shared Hosting Steps
+
+```bash
+# 1. Upload files via FTP/SFTP or Git
+
+# 2. SSH into your hosting (if available)
+cd /path/to/cashcore
+
+# 3. Install dependencies
+composer install --no-dev --optimize-autoloader
+
+# 4. Copy & configure .env
+cp .env.example .env
+php artisan key:generate
+# Edit .env with your database credentials
+
+# 5. Run migrations
+php artisan migrate --force
+
+# 6. Build frontend (or upload pre-built public/build/ directory)
+npm install
+npm run build
+
+# 7. Set permissions
+chmod -R 775 storage bootstrap/cache
+chown -R www-data:www-data storage bootstrap/cache
+
+# 8. Cache config for performance
+php artisan config:cache
+php artisan route:cache
+php artisan view:cache
+```
+
+### .htaccess Features Included
+
+- **Root `.htaccess`**: Redirects all requests to `public/` directory
+- **`public/.htaccess`**: Laravel front controller + security headers + gzip compression + browser caching
+
+---
+
+## Language Support
+
+CashCore supports **English** and **German** out of the box.
+
+- Toggle language via the EN/DE switcher in the header
+- 235 translation keys in `lang/en/cashcore.php` and `lang/de/cashcore.php`
+- Add more languages by copying one of these files to `lang/{locale}/cashcore.php`
+
+---
+
+## Project Structure
+
+```
+app/
+├── Http/
+│   ├── Controllers/
+│   │   ├── Auth/                    # Login, Register
+│   │   └── CashCore/               # 8 feature controllers
+│   └── Middleware/
+│       └── SetLocale.php            # EN/DE locale middleware
+├── Models/                          # 9 Eloquent models
+└── Services/
+    └── CashCoreService.php          # Business logic layer
+
+database/migrations/                 # 9 CashCore tables
+
+lang/
+├── en/cashcore.php                  # English translations (235 keys)
+└── de/cashcore.php                  # German translations (235 keys)
+
+resources/views/
+├── layouts/app.blade.php            # Main layout
+├── auth/                            # Login & Register
+├── cashcore/
+│   ├── layout.blade.php             # CashCore layout with nav tabs
+│   ├── dashboard.blade.php          # Cash Transparency Engine
+│   ├── transactions/                # CRUD + CSV import
+│   ├── leaks/                       # Leak Detection
+│   ├── scoring/                     # Expense Value Scoring
+│   ├── unlocker/                    # Hidden Cash Unlocker
+│   ├── behavior/                    # Behavioral System
+│   ├── scenarios/                   # Scenario Simulator
+│   └── allocation/                  # Profit Allocation Layer
+└── welcome.blade.php                # Landing page
+```
+
+---
+
+## Routes
+
+All CashCore routes are under `/cashcore/*` with `auth` middleware:
+
+| Route | Description |
+|---|---|
+| `GET /cashcore` | Dashboard (Cash Transparency) |
+| `GET /cashcore/transactions` | Transaction list |
+| `GET /cashcore/transactions/create` | Add transaction |
+| `GET /cashcore/transactions/import` | CSV import |
+| `GET /cashcore/leaks` | Leak Detection |
+| `POST /cashcore/leaks/detect` | Run leak detection |
+| `GET /cashcore/scoring` | Expense Scoring |
+| `GET /cashcore/unlocker` | Cash Unlocker |
+| `GET /cashcore/behavior` | Behavioral System |
+| `GET /cashcore/scenarios` | Scenario Simulator |
+| `GET /cashcore/allocation` | Profit Allocation |
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is proprietary software. All rights reserved.
