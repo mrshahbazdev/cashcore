@@ -40,23 +40,23 @@ class CashTransaction extends Model
 
     public function scopeIncome($query)
     {
-        return $query->where('type', 'income');
+        return $query->where('cash_transactions.type', 'income');
     }
 
     public function scopeExpense($query)
     {
-        return $query->where('type', 'expense');
+        return $query->where('cash_transactions.type', 'expense');
     }
 
     public function scopeForPeriod($query, string $period)
     {
         $start = \Carbon\Carbon::parse($period . '-01')->startOfMonth();
         $end = $start->copy()->endOfMonth();
-        return $query->whereBetween('transaction_date', [$start, $end]);
+        return $query->whereBetween('cash_transactions.transaction_date', [$start, $end]);
     }
 
     public function scopeRecurring($query)
     {
-        return $query->where('is_recurring', true);
+        return $query->where('cash_transactions.is_recurring', true);
     }
 }
