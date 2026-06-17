@@ -61,7 +61,7 @@ class CashCoreService
 
         $categoryBreakdown = CashTransaction::where('cash_transactions.user_id', $userId)
             ->expense()
-            ->whereBetween('transaction_date', [$start, $end])
+            ->whereBetween('cash_transactions.transaction_date', [$start, $end])
             ->join('cash_categories', 'cash_transactions.cash_category_id', '=', 'cash_categories.id')
             ->select('cash_categories.name', 'cash_categories.color', 'cash_categories.icon')
             ->selectRaw('SUM(cash_transactions.amount) as total')
